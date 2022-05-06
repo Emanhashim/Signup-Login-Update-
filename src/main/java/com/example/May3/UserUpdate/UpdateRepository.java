@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Repository
 @Transactional(readOnly = true)
-public interface UpadateRepository extends JpaRepository<RegisterUser, Long> {
+public interface UpdateRepository extends JpaRepository<RegisterUser, Long> {
     Optional<RegisterUser> findByResetPasswordToken(String resetPasswordToken);
     Optional<RegisterUser> findByUsername(String username);
     Optional<RegisterUser> findByEmail(String username);

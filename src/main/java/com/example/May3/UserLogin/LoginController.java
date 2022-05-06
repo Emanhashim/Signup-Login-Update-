@@ -57,7 +57,7 @@ public class LoginController {
 
 
     @PostMapping("/login")
-    @ApiOperation(value ="This is UserManagement Module For Sign in User with (Username and Password)")
+    @ApiOperation(value ="This is UserManagement Module For Sign in User with (PhoneNumber and Password)")
     public ResponseEntity<?> createAuthenticationToken( @RequestBody LoginRequest authenticationRequest) throws AuthenticationException  {
 
         boolean userExists = loginRepository

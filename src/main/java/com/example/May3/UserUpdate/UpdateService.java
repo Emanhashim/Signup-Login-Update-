@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 public class UpdateService {
 
     @Autowired
-    private UpadateRepository upadateRepository;
+    private UpdateRepository updateRepository;
 
     public ResponseEntity<?> updatePassword(UpdateRequest request, String newpassword, String onldpass) {
-        RegisterUser register = upadateRepository.findByUsername(request.getUsername()).get();
+        RegisterUser register = updateRepository.findByUsername(request.getUsername()).get();
 
         register.setPassword(newpassword);
-        upadateRepository.save(register);
+        updateRepository.save(register);
 
         return ResponseEntity.ok(new UpdateResponse("successfully updated password"));
 

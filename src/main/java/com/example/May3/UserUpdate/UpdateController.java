@@ -1,6 +1,8 @@
 package com.example.May3.UserUpdate;
 
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 })
 @RequestMapping("/api/users")
+@Api(value = "Update User Endpoint", description = "Here we Update  user data from database")
+
 public class UpdateController {
 	
 	@Autowired
@@ -32,6 +36,7 @@ public class UpdateController {
 	
 
 	@PostMapping("/update")
+	@ApiOperation(value ="This is UserManagement Module To Update Customer Data")
 	public ResponseEntity<?> update(@RequestBody UpdateRequest request) {
 		String pho= request.getPassword();
         String pho2=request.getNewpass();

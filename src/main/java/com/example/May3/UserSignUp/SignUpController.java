@@ -2,6 +2,7 @@ package com.example.May3.UserSignUp;
 
 import com.example.May3.Domain.RegisterUser;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import lombok.AllArgsConstructor;
@@ -36,6 +37,8 @@ public class SignUpController {
 
 
     @PostMapping("/signup")
+
+    @ApiOperation(value ="This is UserManagement Module For Register New Customer")
         public ResponseEntity<?> register(@RequestBody SignUpRequest request) {
             String pass1 = request.getPassword();
             String pass2 = request.getConfirmPassword();
@@ -48,7 +51,6 @@ public class SignUpController {
                                                 request.getLastname(),
                     passwordEncoder.encode(request.getPassword()),
                                             request.getUsername(),
-//                                            request.getEmail(),
                                             request.getBirthday(),
                                             request.getEmail(),
                                             request.getGender(),
